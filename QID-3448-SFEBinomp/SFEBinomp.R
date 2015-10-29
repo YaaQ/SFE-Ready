@@ -9,15 +9,15 @@ k = 3           # number of trajectories
 p = 0.6         # probability of positive step being realised
 
 # Main computation
-t 		= c(0:n)
-trend 	= t * (2 * p - 1)
-std 	= sqrt(4 * t * p * (1 - p))
-s_1 	= trend + 2 * std  # upper confidence band
-s_2 	= trend - 2 * std  # lower confidence band
-z 		= matrix(runif(k * n, min = (p - 1), max = p), k, n, byrow = TRUE)  # matrix of uniform random numbers
-z 		= (z > 0) * 1
-z 		= z * 2 - 1
-walk 	= matrix(0, k, n, byrow = TRUE)
+t       = c(0:n)
+trend   = t * (2 * p - 1)
+std     = sqrt(4 * t * p * (1 - p))
+s_1     = trend + 2 * std  # upper confidence band
+s_2     = trend - 2 * std  # lower confidence band
+z       = matrix(runif(k * n, min = (p - 1), max = p), k, n, byrow = TRUE)  # matrix of uniform random numbers
+z       = (z > 0) * 1
+z       = z * 2 - 1
+walk    = matrix(0, k, n, byrow = TRUE)
 
 for (i in 2:n) {
     walk[, i] = walk[, i - 1] + z[, i]

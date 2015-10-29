@@ -3,13 +3,13 @@ rm(list = ls(all = TRUE))
 graphics.off()
 
 # parameter settings
-a 		= 0.161  	# adjustment factor
-b 		= 0.014  	# long term average interest rate    
-sigma 	= 0.009  	# instantaneous standard deviation
-r0 		= 0.01  	# instantaneous forward rate
-T 		= 250  		# time period
-dt 		= 1  		# time intervals
-N		= T/dt 		# number of time intervals of length dt in long time period T
+a     = 0.161   # adjustment factor
+b     = 0.014   # long term average interest rate    
+sigma = 0.009   # instantaneous standard deviation
+r0    = 0.01    # instantaneous forward rate
+T     = 250     # time period
+dt    = 1       # time intervals
+N     = T/dt    # number of time intervals of length dt in long time period T
 set.seed(100)
 
 # The initial short rate
