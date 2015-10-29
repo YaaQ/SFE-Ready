@@ -13,7 +13,6 @@ Keywords:
 See also:
 - SFEVasiml
 - SFEscomCIR
-- SFEscomCIR
 Author:
 - Li Sun
 - Awdesch Melzer
