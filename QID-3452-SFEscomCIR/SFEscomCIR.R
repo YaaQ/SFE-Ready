@@ -8,19 +8,19 @@ set.seed(100)
 x = read.table("yield_US3month9808.txt")
 
 # Parameters of the CIR model (a, b, sigma)
-a 		= 0.221  	# a CIR
-b 		= 0.02  	# b CIR
-sigma 	= 0.055  	# instantaneous standard deviation
+a 		= 0.221     # a CIR
+b 		= 0.02      # b CIR
+sigma 	= 0.055     # instantaneous standard deviation
 
 # Parameters of the Vasicek model (a1, b1, sigma1)
-a1 		= 0.161  	# a Vasicek
-b1 		= 0.014  	# b Vasicek
-sigma1 	= 0.009  	# sigma Vasicek
+a1 		= 0.161     # a Vasicek
+b1 		= 0.014     # b Vasicek
+sigma1 	= 0.009     # sigma Vasicek
 
-T 		= 90  		# time
-dt 		= 1  		# dt
-R0 		= 0.0186  	# initial rate
-N 		= T/dt		# Number of time intervals of length dt in long time period T
+T 		= 90        # time
+dt 		= 1         # dt
+R0 		= 0.0186    # initial rate
+N 		= T/dt      # Number of time intervals of length dt in long time period T
 
 # The initial short rate
 R 		= NULL
@@ -49,8 +49,8 @@ for (j in 1:10) {
     }
     r_sum = r_sum + r
 }
-rm 	= r_sum/10
-y 	= x[2601:2690, 1]/100
+rm = r_sum/10
+y  = x[2601:2690, 1]/100
 
 # Plot for the Short Rates vs Time
 plot(Rm, col = "blue", type = "l", lwd = 2, xlab = c("Time"), ylab = c("Instantaneous Short Rates"), 
