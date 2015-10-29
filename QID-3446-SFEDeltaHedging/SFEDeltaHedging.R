@@ -2,14 +2,14 @@ rm(list = ls(all = TRUE))
 graphics.off()
 
 # Declare stock price variables
-n 	= 50  		# periods (steps)
-S0 	= 98  		# initial stock price
+n   = 50  		# periods (steps)
+S0  = 98  		# initial stock price
 sig = 0.2  		# volatility (uniform distributed on 0.1 to 0.5)
 
 # Declare option pricing variables
-r 	= 0.05  	# interest rate (uniform distributed on 0 to 0.1)
-K 	= 100  		# exerise price
-t0 	= 6/52  	# current time (1 week = 1/52)
+r   = 0.05  	# interest rate (uniform distributed on 0 to 0.1)
+K   = 100  		# exerise price
+t0  = 6/52  	# current time (1 week = 1/52)
 mat = 26/52  	# maturity
 
 GeneratePaths = function(S0, sig, maturity, K, r, n, t0) {
