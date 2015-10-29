@@ -13,18 +13,18 @@ t0 	= 6/52  	# current time (1 week = 1/52)
 mat = 26/52  	# maturity
 
 GeneratePaths = function(S0, sig, maturity, K, r, n, t0) {
-    dt 	= (maturity - t0)/n  			# period between steps n 
-    t 	= seq(t0, maturity, l = n)  	# maturity - t0 divided in n intervals
-    tau = maturity - t  				# time to maturity
+    dt 	= (maturity - t0)/n             # period between steps n 
+    t 	= seq(t0, maturity, l = n)      # maturity - t0 divided in n intervals
+    tau = maturity - t                  # time to maturity
     
     # Simulate the stock price path
     Wt 	= c(0, sqrt(dt) * cumsum(rnorm(n - 1, 0, 1)))
     S 	= S0 * exp((r - 0.5 * sig^2) * t + sig * Wt)
     
     # Compute delta and the associated hedging costs
-    y 				= (log(S/K) + (r - sig^2/2) * tau)/(sig * sqrt(tau))
-    delta 			= pnorm(y + sig * sqrt(tau))
-    hedge.costs 	= c(delta[1] * S[1], (delta[2:n] - delta[1:(n - 1)]) * S[2:n])
+    y               = (log(S/K) + (r - sig^2/2) * tau)/(sig * sqrt(tau))
+    delta           = pnorm(y + sig * sqrt(tau))
+    hedge.costs     = c(delta[1] * S[1], (delta[2:n] - delta[1:(n - 1)]) * S[2:n])
     cum.hedge.costs = cumsum(hedge.costs)
     
     # Result
