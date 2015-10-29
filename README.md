@@ -1,2 +1,2 @@
-# test-SFE
+# SFE-Ready
 Quantnet: validated SFE quantlets
