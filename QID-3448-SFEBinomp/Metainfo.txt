@@ -20,6 +20,6 @@ See also:
 Author: Alexander Ristig
 Submitted: Sat, July 25 2015 by quantomas
 Input:
-- n- number of observations
-- k- number of trajectories
-- p- probability of up movement
+- n - number of observations
+- k - number of trajectories
+- p - probability of up movement
