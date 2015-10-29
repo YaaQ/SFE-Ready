@@ -3,7 +3,7 @@ rm(list = ls(all = TRUE))
 graphics.off()
 
 # parameter settings
-set.seed(1)  	# pseudo random numbers
+set.seed(1)     # pseudo random numbers
 n = 100  		# number of observations
 k = 3  			# number of trajectories
 p = 0.6  		# probability of positive step being realised
