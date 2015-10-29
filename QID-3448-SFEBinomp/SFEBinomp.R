@@ -3,10 +3,10 @@ rm(list = ls(all = TRUE))
 graphics.off()
 
 # parameter settings
-set.seed(1)  	# pseudo random numbers
-n = 100  		# number of observations
-k = 3  			# number of trajectories
-p = 0.6  		# probability of positive step being realised
+set.seed(1)     # pseudo random numbers
+n = 100         # number of observations
+k = 3           # number of trajectories
+p = 0.6         # probability of positive step being realised
 
 # Main computation
 t 		= c(0:n)
@@ -40,6 +40,6 @@ if (k > 1) {
         points(walk[i, ], type = "l", lwd = 2.5, col = (i + 1))  # all other trajectory
     }
 }
-points(s_1, type = "l", lwd = 0.5)  # upper confidence interval boundary
-points(s_2, type = "l", lwd = 0.5)  # lower confidence interval boundary
+points(s_1, type = "l", lwd = 0.5)    # upper confidence interval boundary
+points(s_2, type = "l", lwd = 0.5)    # lower confidence interval boundary
 points(trend, type = "l", lwd = 2.5)  # trend line 
