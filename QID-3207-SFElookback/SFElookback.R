@@ -3,25 +3,25 @@ rm(list = ls(all = TRUE))
 graphics.off()
 
 # parameter settings
-M.in			= 175  			# Minimum of St
-St1				= 230  			# Price of underlying asset
-r				= 0.04545  		# dom. interest rate
-sigma			= 0.25  		# volatility per year
-T1				= 1  			# time to maturity option
-b				= r  			# cost of carry out
-dt				= 0.2  			# Interval of step
-n				= floor(T1/dt)  # number of steps
+M.in  = 175           # Minimum of St
+St1   = 230           # Price of underlying asset
+r     = 0.04545       # dom. interest rate
+sigma = 0.25          # volatility per year
+T1    = 1             # time to maturity option
+b     = r             # cost of carry out
+dt    = 0.2           # Interval of step
+n     = floor(T1/dt)  # number of steps
 
 # parameters from equation (7.2)
-u				= exp(sigma * sqrt(dt))								# upward proportion: approx 1.1183  
-d				= 1/u												# downward proportion approx. 0.89422
-p				= 0.5 + 0.5 * (b - 0.5 * sigma^2) * sqrt(dt)/sigma  # Pseudo probability of up movement approx 0.5127  
-un				= matrix(0, n + 1, 1)
-un[n + 1, 1]	= 1
-dm				= t(un)												# down movement
-um				= dm												# up movement
+u  = exp(sigma * sqrt(dt))                             # upward proportion: approx 1.1183  
+d  = 1/u                                               # downward proportion approx. 0.89422
+p  = 0.5 + 0.5 * (b - 0.5 * sigma^2) * sqrt(dt)/sigma  # Pseudo probability of up movement approx 0.5127  
+un = matrix(0, n + 1, 1)
+un[n + 1, 1] = 1
+dm = t(un)                                             # down movement
+um = dm                                                # up movement
 
-j = 1
+j  = 1
 while (j < n + 1) {
     # Down movement dynamics
     d1 = c(matrix(0, 1, n - j), (matrix(1, 1, j + 1) * d)^(seq(0:j) - 1))

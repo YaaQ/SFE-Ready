@@ -14,9 +14,9 @@ x = matrix(data[, 2])
 v = matrix(1.96 * data[, 4])
 t = matrix(1:nrow(x))
 
-dat		= matrix(c(t, x), ncol = 2)
-dat2	= matrix(c(t, v), ncol = 2)
-dat3	= matrix(c(t, -v), ncol = 2)
+dat  = matrix(c(t, x), ncol = 2)
+dat2 = matrix(c(t, v), ncol = 2)
+dat3 = matrix(c(t, -v), ncol = 2)
 
 # Plot part 1
 par(c(1, 1), cex = 1.2)
@@ -35,42 +35,42 @@ points(exceed95, col = "black", cex = 1.2, lwd = 2)
 
 # VaR with method: RMA rectangular moving average
 VaRrma = function(y, h, alpha) {
-    y		= as.matrix(y)
-    w		= 1
-    n		= nrow(y)
-    d		= ncol(y)
-    w		= w * matrix(1, 1, d)
-    sigh	= matrix(0, n - h, 1)
-    tmp		= cumsum(y^2)
-    wtr		= t(w)
-    tmp		= (tmp[(h + 1):n] - tmp[1:(n - h)])/h
-    tmp		= as.matrix(tmp)
-    sigh	= sqrt(tmp)
-    qf		= qnorm(alpha)
-    qf		= matrix(qf, nrow = nrow(sigh), 1)
-    VaR		= qf * sigh
-    VaR		= cbind(VaR, (-VaR))
-    VaR		= VaR
+    y    = as.matrix(y)
+    w    = 1
+    n    = nrow(y)
+    d    = ncol(y)
+    w    = w * matrix(1, 1, d)
+    sigh = matrix(0, n - h, 1)
+    tmp  = cumsum(y^2)
+    wtr  = t(w)
+    tmp  = (tmp[(h + 1):n] - tmp[1:(n - h)])/h
+    tmp  = as.matrix(tmp)
+    sigh = sqrt(tmp)
+    qf   = qnorm(alpha)
+    qf   = matrix(qf, nrow = nrow(sigh), 1)
+    VaR  = qf * sigh
+    VaR  = cbind(VaR, (-VaR))
+    VaR  = VaR
 }
 
 # VaR with method: EMA exponential moving average
 VaRema = function(y, h, alpha) {
-    lam		= 0.96
-    dist	= 0
-    y		= as.matrix(y) # w = 1
-    n		= nrow(y)
-    d		= ncol(y)      # w = w*matrix(1,1,d)
-    grid	= seq((h - 1), 0, -1)
-    sigh	= matrix(0, n - h, 1)
-    j		= h
+    lam  = 0.96
+    dist = 0
+    y    = as.matrix(y) # w = 1
+    n    = nrow(y)
+    d    = ncol(y)      # w = w*matrix(1,1,d)
+    grid = seq((h - 1), 0, -1)
+    sigh = matrix(0, n - h, 1)
+    j    = h
     while (j < n) {
-        j			= j + 1
-        tmp			= (lam^grid) * y[(j - h):(j - 1)]
-        tmp1		= sum(tmp * tmp)
+        j           = j + 1
+        tmp         = (lam^grid) * y[(j - h):(j - 1)]
+        tmp1        = sum(tmp * tmp)
         sigh[j - h] = sqrt(sum(sum(tmp1), 2) * (1 - lam))
     }
-    qf	= qnorm(alpha)
-    qf	= matrix(qf, nrow = nrow(sigh), 1)
+    qf  = qnorm(alpha)
+    qf  = matrix(qf, nrow = nrow(sigh), 1)
     VaR = qf * sigh
     VaR = cbind(VaR, (-VaR))
     VaR = VaR

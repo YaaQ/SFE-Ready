@@ -9,11 +9,11 @@ lapply(libraries, function(x) if (!(x %in% installed.packages())) {install.packa
 lapply(libraries, library, quietly = TRUE, character.only = TRUE)
 
 # parameter settings
-nop	= 30  # number of grid points (in the book = 31)
-k	= nop
-s	= 0.31/nop
-q	= seq(0, by = s, length.out = k)
-q	= as.matrix(q)
+nop = 30  # number of grid points (in the book = 31)
+k   = nop
+s   = 0.31/nop
+q   = seq(0, by = s, length.out = k)
+q   = as.matrix(q)
 
 # computing grid
 w = matrix(1, k^2, 2)

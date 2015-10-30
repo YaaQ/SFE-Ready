@@ -19,10 +19,10 @@ while (length(para) < 4 | length(para) > 4 | any(para <= 0)) {
     para = scan()
 }
 
-S0	= para[1]  # Initial Stock Price
-r	= para[2]  # Interest Rate per Year
+S0  = para[1]  # Initial Stock Price
+r   = para[2]  # Interest Rate per Year
 vol = para[3]  # Volatility per Year
-b	= para[4]  # Barrier
+b   = para[4]  # Barrier
 
 N = 1000
 t = (1:N)/N

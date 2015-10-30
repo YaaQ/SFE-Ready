@@ -41,12 +41,12 @@ simGBM = function(n, x0, mu, sigma, delta, no, method) {
 
 set.seed(100)
 # parameter settings
-step	= 100 		# number of steps of the motion
-k		= 5			# number of trajectories
-mu		= 0.84
-sig		= 0.02
+step = 100    # number of steps of the motion
+k    = 5      # number of trajectories
+mu   = 0.84
+sig  = 0.02
 
-path	= matrix(0, step + 1, k)
+path = matrix(0, step + 1, k)
 for (i in 1:k) {
     path[, i] = simGBM(1, mu, sig, sqrt(0.1), 1/100, rnorm(step, 0, 1), 1)
 }
