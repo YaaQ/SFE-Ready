@@ -20,8 +20,8 @@ s = cov(z) * 1e+05
 e = eigen(s)
 e = e$vectors
 
-f1	= e[, 1]
-f2	= e[, 2]
+f1 = e[, 1]
+f2 = e[, 2]
 
 # Adjust second Eigenvector in R not necessary - the computation differs from R to Matlab 
 

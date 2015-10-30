@@ -10,27 +10,27 @@ lapply(libraries, function(x) if (!(x %in% installed.packages())) {
 lapply(libraries, library, quietly = TRUE, character.only = TRUE)
 
 # Read data for FSE and LSE
-DS 	= read.table("FSE_LSE.dat")
-D 	= DS[, 1]		# date
-S 	= DS[, 2:43]  	# S(t)
-s 	= log(S)
-end = length(D)  	# log(S(t))
-r 	= s[2:end, ] - s[1:(end - 1), ]  # r(t)
-n 	= length(r)  	# sample size
-t 	= c(1:n)  		# time index, t
+DS  = read.table("FSE_LSE.dat")
+D   = DS[, 1]       # date
+S   = DS[, 2:43]    # S(t)
+s   = log(S)
+end = length(D)     # log(S(t))
+r   = s[2:end, ] - s[1:(end - 1), ]  # r(t)
+n   = length(r)     # sample size
+t   = c(1:n)        # time index, t
 
 # Parameter estimation of various GARCH models
 
 # (1) AR(1)-GARCH(1,1)
 
-DAX.AR1GARCH11 	= garchFit(~arma(1, 0) + garch(1, 1), r[, 1], trace = T)
+DAX.AR1GARCH11  = garchFit(~arma(1, 0) + garch(1, 1), r[, 1], trace = T)
 FTSE.AR1GARCH11 = garchFit(~arma(1, 0) + garch(1, 1), r[, 22], trace = T)
 
 # (2) AR(1)-TGARCH(1,1)
 
-DAX.AR1TGARCH11		= garchFit(~arma(1, 0) + aparch(1, 1), data = r[, 1], delta = 2, 
+DAX.AR1TGARCH11  = garchFit(~arma(1, 0) + aparch(1, 1), data = r[, 1], delta = 2, 
     include.delta = FALSE, leverage = TRUE)
-FTSE.AR1TGARCH11 	= garchFit(~arma(1, 0) + aparch(1, 1), data = r[, 22], delta = 2, 
+FTSE.AR1TGARCH11 = garchFit(~arma(1, 0) + aparch(1, 1), data = r[, 22], delta = 2, 
     include.delta = FALSE, leverage = TRUE)
 
 # (3) AR(1)-EGARCH(1,1)
