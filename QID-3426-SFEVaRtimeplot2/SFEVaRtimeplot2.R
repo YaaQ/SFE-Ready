@@ -43,13 +43,13 @@ VaRest = function(y, method) {
 }
 
 # Main computation
-x1 = read.table("kupfer.dat")
-x = x1[1:1001, 1]
-y = diff(log(x))
+x1   = read.table("kupfer.dat")
+x    = x1[1:1001, 1]
+y    = diff(log(x))
 
 # Option 1=RMA, Option 2=EMA
-opt1 = VaRest(y, 1)
-opt2 = VaRest(y, 2)
+opt1  = VaRest(y, 1)
+opt2  = VaRest(y, 2)
 
 # parameter settings
 n     = length(y)
