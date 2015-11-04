@@ -23,6 +23,6 @@ x = diff(log(tx))
 name        = "DAFOX 1993-96"
 origyear    = 1993
 origperiod  = 1
-periodicity	= 300
+periodicity = 300
 tfplot(ts(x, start = c(1993, 1), frequency = periodicity), start = c(origyear, origperiod), 
     title = name)  
