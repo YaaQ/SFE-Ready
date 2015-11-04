@@ -64,12 +64,12 @@ rbftrain = function(x, y, clusters, learn, epochs, mMSE, activ) {
     }
     
     # parameter settings
-    inputs	= NCOL(x)	# dimension of the signal
-    outputs = NCOL(y)	# number of output units
-    samples = NROW(x)	# number of observations
+    inputs  = NCOL(x)   # dimension of the signal
+    outputs = NCOL(y)   # number of output units
+    samples = NROW(x)   # number of observations
     # warning((inputs > 24)||(outputs > 10),'rbftrain: the dimensions of the data are
     # too high')
-    interimLR = 1		# initialize the learning rate
+    interimLR = 1       # initialize the learning rate
     
     # unsupervised learning
     
