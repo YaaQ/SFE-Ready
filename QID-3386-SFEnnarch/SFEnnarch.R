@@ -185,8 +185,8 @@ rbftrain = function(x, y, clusters, learn, epochs, mMSE, activ) {
             
             # correct weights and bias
             outWeightsCorrect = learn[3] * matrix(errInfoTerm) %*% t(gaussOut)
-            outputsWeights    = outputsWeights + outWeightsCorrect	# correct the output weights
-            bias = bias + learn[3] * errInfoTerm						# correct bias 
+            outputsWeights    = outputsWeights + outWeightsCorrect  # correct the output weights
+            bias = bias + learn[3] * errInfoTerm                    # correct bias 
             
             i = i + 1
         }
