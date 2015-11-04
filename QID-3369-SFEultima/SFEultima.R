@@ -13,7 +13,7 @@ lapply(libraries, library, quietly = TRUE, character.only = TRUE)
 s1    = 50      # lower bound of Asset Price
 s2    = 150     # upper bound of Asset Price 
 t1    = 0.05    # lower bound of Time to Maturity
-t2    = 1		# upper bound of Time to Maturity
+t2    = 1       # upper bound of Time to Maturity
 K     = 100     # exercise price 
 r     = 0.01    # interest rate
 sig   = 0.35    # volatility
