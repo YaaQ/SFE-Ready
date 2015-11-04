@@ -372,7 +372,7 @@ ghut = rbfpredict(train.yt, gnet, min((ehut)^2), max((ehut)^2))
 
 # plot of conditional volatility
 time = (1:NROW(ehut))/257 + (1997 + 80/257)
-vvv	= cbind(time, ghut)  # green thin line
+vvv  = cbind(time, ghut)  # green thin line
 
 plot(vvv, col = "red3", type = "l", lwd = 1.5, ylab = "Y", xlab = "X", ylim = c(min(vvv[, 
     2]), max(vvv[, 2])))
