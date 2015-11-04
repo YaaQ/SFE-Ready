@@ -239,10 +239,10 @@ rbfpredict = function(x, rbfnet, miny, maxy) {
 # Usage       netOut = rbfpredict(x,rbfnet,miny,maxy)
 # ---------------------------------------------------------------------
 # Input       
-# x			- (n x p) matrix, predictor variables
-# rbfnet	- composed object (list), RBF network as computed by rbftrain or rbftrain2
-# miny		- (q x 1) vector, minimum values for the output vector
-# maxy		- (q x 1) vector, maximum values for the output vector
+# x         - (n x p) matrix, predictor variables
+# rbfnet    - composed object (list), RBF network as computed by rbftrain or rbftrain2
+# miny      - (q x 1) vector, minimum values for the output vector
+# maxy      - (q x 1) vector, maximum values for the output vector
 # ---------------------------------------------------------------------
 # Output      
 # netOut - (n x q) matrix, output of the rbfnet
@@ -250,15 +250,15 @@ rbfpredict = function(x, rbfnet, miny, maxy) {
         if (sum(miny >= maxy) > 0) {
         stop("rbfpredict: miny >= maxy")
     }
-    samples			= NROW(x)						# number of observations
-    clustersWeights	= rbfnet$net$clustersWeights	# centers of the clusters
-    trFonDev		= rbfnet$net$trFonDev			# deviance of the transfer function
-    outputsWeights	= rbfnet$net$outputsWeights		# weights of the output layer
-    bias			= rbfnet$net$bias				# bias of each output node
-    activ			= rbfnet$inp$activ				# activation function
-    clusters		= NROW(clustersWeights)			# number of clusters used in rbfnet
-    inputs			= NCOL(clustersWeights)			# dimension of the signal of the net
-    outputs			= NROW(outputsWeights)			# number of output units
+    samples         = NROW(x)                       # number of observations
+    clustersWeights = rbfnet$net$clustersWeights    # centers of the clusters
+    trFonDev        = rbfnet$net$trFonDev           # deviance of the transfer function
+    outputsWeights  = rbfnet$net$outputsWeights     # weights of the output layer
+    bias            = rbfnet$net$bias               # bias of each output node
+    activ           = rbfnet$inp$activ              # activation function
+    clusters        = NROW(clustersWeights)         # number of clusters used in rbfnet
+    inputs          = NCOL(clustersWeights)         # dimension of the signal of the net
+    outputs         = NROW(outputsWeights)          # number of output units
     
     if (inputs != NCOL(x)) {
         stop("rbfpredict: cols(x) <> dimension of the input of rbfnet")
