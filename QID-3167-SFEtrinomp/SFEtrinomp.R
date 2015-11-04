@@ -11,19 +11,19 @@ SFEtrinomp = function(n, k, p, q) {
     if (n <= 0 | k <= 0) {
         stop("SFEtrinomp: Please input a positive number of steps (n) and number of trajectories (k)!")
     }
-    n = floor(n)	# makes sure number of steps is integer
-    k = floor(k)	# makes sure number of path	is integer
+    n = floor(n)    # makes sure number of steps is integer
+    k = floor(k)    # makes sure number of path	is integer
     
     # Main simulation
-    set.seed(0)		# pseudo random numbers
-    u = 1			# n of t increments Z_1,...,Z_t take value u
-    d = 1			# m of t increments Z_1,...,Z_t take value d
+    set.seed(0)     # pseudo random numbers
+    u = 1           # n of t increments Z_1,...,Z_t take value u
+    d = 1           # m of t increments Z_1,...,Z_t take value d
     t = 1:n
     trend = t * (p * u - q * d)
     std = sqrt(t * (p * (1 - p) + q * (1 - q) + 2 * p * q * u * d))
-    s1 = trend + 2 * std					# upper confidence band
-    s2 = trend - 2 * std					# lower confidence band
-    z = matrix(runif(n * k), n, k)  		# uniform random numbers
+    s1 = trend + 2 * std                    # upper confidence band
+    s2 = trend - 2 * std                    # lower confidence band
+    z = matrix(runif(n * k), n, k)          # uniform random numbers
     z = (-1) * (z < q) + (z > (1 - p))
     x = apply(z, MARGIN = 2, FUN = cumsum)
     

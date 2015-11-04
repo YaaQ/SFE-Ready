@@ -3,14 +3,14 @@ rm(list = ls(all = TRUE))
 graphics.off()
 
 # Read data for FSE and LSE
-DS	= read.table("FSE_LSE.dat")
-D	= DS[, 1]  							# date
-S	= DS[, 2:43]						# S(t)
-s	= log(S)							# log(S(t))
-end	= dim(s)[1]							# last observation
-r	= s[2:end, ] - s[1:(end - 1), ]		# r(t)
-n	= dim(r)[1]  						# sample size
-t	= 1:n  								# time index, t
+DS  = read.table("FSE_LSE.dat")
+D   = DS[, 1]                           # date
+S   = DS[, 2:43]                        # S(t)
+s   = log(S)                            # log(S(t))
+end	= dim(s)[1]                         # last observation
+r   = s[2:end, ] - s[1:(end - 1), ]     # r(t)
+n   = dim(r)[1]                         # sample size
+t   = 1:n                               # time index, t
 
 # Descriptive statistics for the DAX and FTSE 100 daily return processes
 Y = rbind(cbind(min(r[, 1]), max(r[, 1]), mean(r[, 1]), median(r[, 1]), sd(r[, 1]/sqrt(n))), 

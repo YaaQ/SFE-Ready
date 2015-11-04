@@ -19,15 +19,15 @@ SFEbinomv = function(n, k, p) {
     
     # main computation
     set.seed(0)
-    z			= matrix(runif(n * k), n, k)
-    z			= ((floor(-z + p)) + 0.5) * 2		# scale ordinary binomial processes
-    x			= apply(z, MARGIN = 2, FUN = sum)	# end values of the k binomial processes
-    h			= 0.3 * (max(x) - min(x))			# bandwidth used to estimate the density of end values
-    xdens		= density(x, bw = h)				# Kernel-based density estimation with specified bandwidth
-    trend		= n * (2 * p - 1)
-    std			= sqrt(4 * n * p * (1 - p))
-    norm		= std * rnorm(k) + trend
-    normdens	= density(norm, bw = h)
+    z        = matrix(runif(n * k), n, k)
+    z        = ((floor(-z + p)) + 0.5) * 2      # scale ordinary binomial processes
+    x        = apply(z, MARGIN = 2, FUN = sum)  # end values of the k binomial processes
+    h        = 0.3 * (max(x) - min(x))          # bandwidth used to estimate the density of end values
+    xdens    = density(x, bw = h)               # Kernel-based density estimation with specified bandwidth
+    trend    = n * (2 * p - 1)
+    std      = sqrt(4 * n * p * (1 - p))
+    norm     = std * rnorm(k) + trend
+    normdens = density(norm, bw = h)
     
     # plot of logs of densities
     plot(as.matrix(xdens$x), log(as.matrix(xdens$y)), type = "l", lwd = 2, 

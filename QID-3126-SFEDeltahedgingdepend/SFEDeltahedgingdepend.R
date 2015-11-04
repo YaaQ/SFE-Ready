@@ -9,16 +9,16 @@ graphics.off()
 # and calculate delta at each point as time to maturity decreases
 
 # parameter settings
-S0		= 98	# Initial price
-K		= 100	# strike price
-r		= 0.05	# current expectation of returns
-sigma	= 0.2	# volatility , std deviations around the drift
-T		= 26/52	# time to maturity is 26 weeks, here in yearstt
-steps	= 50
-tp		= 6/52  # present time is 6 weeks 
-dt		= (T - tp)/steps
-t		= seq(tp, T, by = dt)
-Tau		= T - t
+S0    = 98      # Initial price
+K     = 100     # strike price
+r     = 0.05    # current expectation of returns
+sigma = 0.2     # volatility , std deviations around the drift
+T     = 26/52   # time to maturity is 26 weeks, here in yearstt
+steps = 50
+tp    = 6/52    # present time is 6 weeks 
+dt    = (T - tp)/steps
+t     = seq(tp, T, by = dt)
+Tau   = T - t
 
 # set pseudo random numbers
 set.seed(80)
@@ -71,20 +71,20 @@ title("Delta for simulated stock price paths")
 # Plot 2
 # We plot delta vs stock price for different time to maturities
 # parameter settings
-Smin	= 70  		# lower bound of stock price
-Smax	= 130  		# upper bound of stock price
-taumin	= 0.05  	# lower bound of time to maturity
-taumax	= 20/52  	# upper bound of time to maturity
-S0		= 98  		# initial stock pricet
-K		= 100  		# strike price
-r		= 0.05  	# interest rate
-sigma	= 0.2  		# volatility
-steps	= 50
-tsteps	= 5
-T		= 26/52
-St		= seq(Smax, Smin, by = -(Smax - Smin)/(steps))
-taus	= seq(taumax, taumin, by = -(taumax - taumin)/tsteps)  # different time to maturity
-delta	= matrix(0, (steps + 1), length(taus))
+Smin   = 70         # lower bound of stock price
+Smax   = 130        # upper bound of stock price
+taumin = 0.05       # lower bound of time to maturity
+taumax = 20/52      # upper bound of time to maturity
+S0     = 98  		# initial stock pricet
+K      = 100  		# strike price
+r      = 0.05       # interest rate
+sigma  = 0.2        # volatility
+steps  = 50
+tsteps = 5
+T      = 26/52
+St     = seq(Smax, Smin, by = -(Smax - Smin)/(steps))
+taus   = seq(taumax, taumin, by = -(taumax - taumin)/tsteps)  # different time to maturity
+delta  = matrix(0, (steps + 1), length(taus))
 
 # function for delta
 black_scholes_delta = function(S, K, Tau, r, sigma) {
