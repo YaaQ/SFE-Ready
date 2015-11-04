@@ -138,7 +138,7 @@ rbftrain = function(x, y, clusters, learn, epochs, mMSE, activ) {
     uniform           = runif(outputs * clusters)
     outputsWeights    = 2 * matrix(uniform, outputs, clusters, byrow = T) - 1  # weights of the output layer
     outWeightsCorrect = matrix(1, outputs, clusters)    # correction weights
-    bias              = 2 * runif(outputs) - 1			# bias of each output node
+    bias              = 2 * runif(outputs) - 1          # bias of each output node
     maxDiff           = matrix(-1, epochs[2], outputs)  # max difference of each output node in each epoch
     meanDiff          = matrix(0, epochs[2], outputs)   # mean          ---  |  |  ---
     MSE               = matrix(0, epochs[2], 1)         # mean squared error for each epoch
