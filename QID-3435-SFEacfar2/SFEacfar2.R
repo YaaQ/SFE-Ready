@@ -4,8 +4,8 @@ graphics.off()
 
 # parameter settings
 lag = "30"  	# lag value
-a1 	= "0.5"  	# value of alpha_1
-a2 	= "0.4"  	# value of alpha_2
+a1  = "0.5"  	# value of alpha_1
+a2  = "0.4"  	# value of alpha_2
 
 # Input alpha1
 message = "input alpha1"
