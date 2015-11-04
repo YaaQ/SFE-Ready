@@ -8,16 +8,16 @@ lapply(libraries, function(x) if (!(x %in% installed.packages())) {install.packa
 lapply(libraries, library, quietly = TRUE, character.only = TRUE)
 
 # parameter settings
-s1		= 50  	# lower bound of Asset Price
-s2		= 150  	# upper bound of Asset Price 
-t1		= 0.05  # lower bound of Time to Maturity
-t2		= 1  	# upper bound of Time to Maturity
-K		= 100  	# exercise price 
-r		= 0.01  # interest rate
-sig		= 0.35  # volatility
-d		= 0		# dividend rate
-b		= r - d	# cost of carry
-steps	= 60
+s1    = 50      # lower bound of Asset Price
+s2    = 150     # upper bound of Asset Price 
+t1    = 0.05    # lower bound of Time to Maturity
+t2    = 1       # upper bound of Time to Maturity
+K     = 100     # exercise price 
+r     = 0.01    # interest rate
+sig   = 0.35    # volatility
+d     = 0       # dividend rate
+b     = r - d   # cost of carry
+steps = 60
 
 meshgrid = function(a, b) {
     list(x = outer(b * 0, a, FUN = "+"), y = outer(b, a * 0, FUN = "+"))
@@ -30,8 +30,8 @@ dump = first$y
 
 second = meshgrid(seq(s1, s2, -(s1 - s2)/(steps - 1)), seq(s1, s2, -(s1 - s2)/(steps - 1)))
 
-dump2 	= second$x
-S 		= second$y
+dump2 = second$x
+S     = second$y
 
 # Black Scholes
 d1 = (log(S/K) + (r - d + sig^2/2) * tau)/(sig * sqrt(tau))

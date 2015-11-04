@@ -3,20 +3,20 @@ rm(list = ls(all = TRUE))
 graphics.off()
 
 # Read data for FSE and LSE
-DS	= read.table("FSE_LSE.dat")
-D	= DS[, 1]						# date
-S	= DS[, 2:43]					# S(t)
-s	= log(S)						# log(S(t))
-n1	= dim(s)						
-end	= n1[1]							# end of sample
-r	= s[-1, ] - s[1:(end - 1), ]	# r(t)
-n	= dim(r)[1]						# sample size
-t	= 1:n							# time index, t
+DS  = read.table("FSE_LSE.dat")
+D   = DS[, 1]                       # date
+S   = DS[, 2:43]                    # S(t)
+s   = log(S)                        # log(S(t))
+n1  = dim(s)						
+end = n1[1]                         # end of sample
+r   = s[-1, ] - s[1:(end - 1), ]    # r(t)
+n   = dim(r)[1]                     # sample size
+t   = 1:n                           # time index, t
 
 # Labels
-time		= strptime(D, format = "%Y%m%d")
-labels		= as.numeric(format(as.Date(time, "%Y-%m-%d"), "%Y"))
-where.put	= c(1, which(diff(labels) == 1) + 1)
+time      = strptime(D, format = "%Y%m%d")
+labels    = as.numeric(format(as.Date(time, "%Y-%m-%d"), "%Y"))
+where.put = c(1, which(diff(labels) == 1) + 1)
 
 # Time series plot of the DAX daily returns
 par(mfrow = c(2, 1))
