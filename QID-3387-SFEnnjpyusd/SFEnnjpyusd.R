@@ -10,13 +10,13 @@ rbftrain = function(x, y, clusters, learn, epochs, mMSE, activ) {
 # Usage       {inp,net,err} = rbftrain(x,y,clusters,learn,epochs,mMSE{,activ})
 # ---------------------------------------------------------------------
 # Input   
-# x			  - (n x p) matrix, predictor variables
-# y			  - (n x q) matrix, response variables
-# clusters	  - scalar, number of clusters to be built in the hidden layer
-# learn		  - (3 x 1) vector, minimum learning rate and maximum learning rate for building the clusters respectively, learn[3] is the learning rate for training the output layer. learn must be from (0,1).
-# epochs	  - (2 x 1) vector, number of epochs to train the cluster and output units respectively
-# mMSE		  - scalar, minimum value of the mean squared error to stop the training
-# activ		  - optional scalar, 0 for binary (default) or 1 for bipolar activation sigmoid function.
+# x           - (n x p) matrix, predictor variables
+# y           - (n x q) matrix, response variables
+# clusters    - scalar, number of clusters to be built in the hidden layer
+# learn       - (3 x 1) vector, minimum learning rate and maximum learning rate for building the clusters respectively, learn[3] is the learning rate for training the output layer. learn must be from (0,1).
+# epochs      - (2 x 1) vector, number of epochs to train the cluster and output units respectively
+# mMSE        - scalar, minimum value of the mean squared error to stop the training
+# activ       - optional scalar, 0 for binary (default) or 1 for bipolar activation sigmoid function.
 # ---------------------------------------------------------------------
 # Output      
 # inp - list of input parameters which define the network# it consists of elements:
