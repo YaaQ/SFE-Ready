@@ -306,9 +306,9 @@ rbfpredict = function(x, rbfnet, miny, maxy) {
 set.seed(78)
 x  = read.table("XFGTHBbasket1.dat")
 r  = nrow(x)
-xt = x[4:(4 * nrow(x)/5), 11]  # 80% of data as training set
+xt = x[4:(4 * nrow(x)/5), 11]   # 80% of data as training set
 xt = as.matrix(as.numeric(as.character(xt)))
-l  = 3							# sets lag and prepares input matrix, output target
+l  = 3                          # sets lag and prepares input matrix, output target
 
 # lagging
 r  = nrow(xt)
