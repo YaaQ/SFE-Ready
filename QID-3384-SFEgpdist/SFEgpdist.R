@@ -10,9 +10,9 @@ lapply(libraries, function(x) if (!(x %in% installed.packages())) {
 lapply(libraries, library, quietly = TRUE, character.only = TRUE)
 
 # parameter settings
-n	= 100
-sp	= 5
-r	= c(0.5, 0, -0.5)  # values of shape parameter gamma
+n  = 100
+sp = 5
+r  = c(0.5, 0, -0.5)  # values of shape parameter gamma
 
 # x>0 with gamma>0
 x1	= seq(0.001, by = 0.05, length.out = 101)  
