@@ -63,8 +63,8 @@ while (i <= nrow(x)) {
     w1 = x[i, 1] * w[, 1] + x[i, 2] * w[, 2] - bias
     w2 = w1/abs(w1)
     w2 = cbind(w2)
-    w2[w2 == -1] = 0				# replace -1 with 0
-    w2[is.nan(w2) == TRUE] = 0  	# replace NaN with 0
+    w2[w2 == -1] = 0                # replace -1 with 0
+    w2[is.nan(w2) == TRUE] = 0      # replace NaN with 0
     w3 = (y[i] - w2)^2
     w4 = w4 + w3
     i = i + 1
