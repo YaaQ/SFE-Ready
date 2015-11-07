@@ -1,611 +1,0 @@
-# clear variables and close windows#
-rm(list = ls(all = TRUE))#
-graphics.off()#
-# install and load packages#
-libraries = c("fExtremes")#
-lapply(libraries, function(x) if (!(x %in% installed.packages())) {#
-    install.packages(x)#
-})#
-lapply(libraries, library, quietly = TRUE, character.only = TRUE)#
-# Main computation#
-x = rgpd(100, xi = 0.1)  # generate a generalized pareto distributed variables #
-x = sort(x)#
-n = length(x)#
-q = "0.01"#
-k = "10"#
-message = "      Quantile"#
-default = q#
-q = winDialogString(message, default)#
-q = type.convert(q, na.strings = "NA", as.is = FALSE, dec = ".")#
-message = "      Excess"#
-default = k#
-k = winDialogString(message, default)#
-k = type.convert(k, na.strings = "NA", as.is = FALSE, dec = ".")#
-if (k < 8 && k > (n - 1)) warning("SFEhillquantile: excess should be greater than 8 and less than the number of elements.", #
-    call. = FALSE)#
-if (q < 0 && q > 1) warning("SFEhillquantile: please give a rational quantile value.", #
-    call. = FALSE)#
-rest = gpdFit(x, nextremes = k, type = "mle")				# ML-estimation of gamma #
-rest = rest@parameter#
-# the Hill-quantile value#
-(xest = x[k] + x[k] * (((n/k) * (1 - q))^(-rest$u) - 1))	# Hill-quantil estimation
-# clear variables and close windows#
-rm(list = ls(all = TRUE))#
-graphics.off()#
-# install and load packages#
-libraries = c("fExtremes")#
-lapply(libraries, function(x) if (!(x %in% installed.packages())) {#
-    install.packages(x)#
-})#
-lapply(libraries, library, quietly = TRUE, character.only = TRUE)#
-# Main computation#
-x = rgpd(100, xi = 0.1)  # generate a generalized pareto distributed variables #
-x = sort(x)#
-n = length(x)#
-q = "0.01"#
-k = "10"#
-message = "      Quantile"#
-default = q#
-q = winDialogString(message, default)#
-q = type.convert(q, na.strings = "NA", as.is = FALSE, dec = ".")#
-message = "      Excess"#
-default = k#
-k = winDialogString(message, default)#
-k = type.convert(k, na.strings = "NA", as.is = FALSE, dec = ".")#
-if (k < 8 && k > (n - 1)) warning("SFEhillquantile: excess should be greater than 8 and less than the number of elements.", #
-    call. = FALSE)#
-if (q < 0 && q > 1) warning("SFEhillquantile: please give a rational quantile value.", #
-    call. = FALSE)#
-rest = gpdFit(x, nextremes = k, type = "mle")				# ML-estimation of gamma #
-rest = rest@parameter#
-# the Hill-quantile value#
-(xest = x[k] + x[k] * (((n/k) * (1 - q))^(-rest$u) - 1))	# Hill-quantil estimation
-# clear variables and close windows#
-rm(list = ls(all = TRUE))#
-graphics.off()#
-# install and load packages#
-libraries = c("fExtremes")#
-lapply(libraries, function(x) if (!(x %in% installed.packages())) {#
-    install.packages(x)#
-})#
-lapply(libraries, library, quietly = TRUE, character.only = TRUE)#
-# Main computation#
-x = rgpd(100, xi = 0.1)  # generate a generalized pareto distributed variables #
-x = sort(x)#
-n = length(x)#
-q = "0.01"#
-k = "10"#
-message = "      Quantile"#
-default = q#
-q = winDialogString(message, default)#
-q = type.convert(q, na.strings = "NA", as.is = FALSE, dec = ".")#
-message = "      Excess"#
-default = k#
-k = winDialogString(message, default)#
-k = type.convert(k, na.strings = "NA", as.is = FALSE, dec = ".")#
-if (k < 8 && k > (n - 1)) warning("SFEhillquantile: excess should be greater than 8 and less than the number of elements.", #
-    call. = FALSE)#
-if (q < 0 && q > 1) warning("SFEhillquantile: please give a rational quantile value.", #
-    call. = FALSE)#
-rest = gpdFit(x, nextremes = k, type = "mle")				# ML-estimation of gamma #
-rest = rest@parameter#
-# the Hill-quantile value#
-(xest = x[k] + x[k] * (((n/k) * (1 - q))^(-rest$u) - 1))	# Hill-quantil estimation
-# clear variables and close windows#
-rm(list = ls(all = TRUE))#
-graphics.off()#
-# install and load packages#
-libraries = c("fExtremes")#
-lapply(libraries, function(x) if (!(x %in% installed.packages())) {#
-    install.packages(x)#
-})#
-lapply(libraries, library, quietly = TRUE, character.only = TRUE)#
-# Main computation#
-x = rgpd(100, xi = 0.1)  # generate a generalized pareto distributed variables #
-x = sort(x)#
-n = length(x)#
-q = "0.01"#
-k = "10"#
-message = "      Quantile"#
-default = q#
-q = winDialogString(message, default)#
-q = type.convert(q, na.strings = "NA", as.is = FALSE, dec = ".")#
-message = "      Excess"#
-default = k#
-k = winDialogString(message, default)#
-k = type.convert(k, na.strings = "NA", as.is = FALSE, dec = ".")#
-if (k < 8 && k > (n - 1)) warning("SFEhillquantile: excess should be greater than 8 and less than the number of elements.", #
-    call. = FALSE)#
-if (q < 0 && q > 1) warning("SFEhillquantile: please give a rational quantile value.", #
-    call. = FALSE)#
-rest = gpdFit(x, nextremes = k, type = "mle")				# ML-estimation of gamma #
-rest = rest@parameter#
-# the Hill-quantile value#
-(xest = x[k] + x[k] * (((n/k) * (1 - q))^(-rest$u) - 1))	# Hill-quantil estimation
-# clear variables and close windows#
-rm(list = ls(all = TRUE))#
-graphics.off()#
-# install and load packages#
-libraries = c("fExtremes")#
-lapply(libraries, function(x) if (!(x %in% installed.packages())) {#
-    install.packages(x)#
-})#
-lapply(libraries, library, quietly = TRUE, character.only = TRUE)#
-# Main computation#
-x = rgpd(100, xi = 0.1)  # generate a generalized pareto distributed variables #
-x = sort(x)#
-n = length(x)#
-q = "0.01"#
-k = "10"#
-message = "      Quantile"#
-default = q#
-q = winDialogString(message, default)#
-q = type.convert(q, na.strings = "NA", as.is = FALSE, dec = ".")#
-message = "      Excess"#
-default = k#
-k = winDialogString(message, default)#
-k = type.convert(k, na.strings = "NA", as.is = FALSE, dec = ".")#
-if (k < 8 && k > (n - 1)) warning("SFEhillquantile: excess should be greater than 8 and less than the number of elements.", #
-    call. = FALSE)#
-if (q < 0 && q > 1) warning("SFEhillquantile: please give a rational quantile value.", #
-    call. = FALSE)#
-rest = gpdFit(x, nextremes = k, type = "mle")				# ML-estimation of gamma #
-rest = rest@parameter#
-# the Hill-quantile value#
-(xest = x[k] + x[k] * (((n/k) * (1 - q))^(-rest$u) - 1))	# Hill-quantil estimation
-# clear variables and close windows#
-rm(list = ls(all = TRUE))#
-graphics.off()#
-# install and load packages#
-libraries = c("fExtremes")#
-lapply(libraries, function(x) if (!(x %in% installed.packages())) {#
-    install.packages(x)#
-})#
-lapply(libraries, library, quietly = TRUE, character.only = TRUE)#
-# Main computation#
-x = rgpd(100, xi = 0.1)  # generate a generalized pareto distributed variables #
-x = sort(x)#
-n = length(x)#
-q = "0.01"#
-k = "10"#
-message = "      Quantile"#
-default = q#
-q = winDialogString(message, default)#
-q = type.convert(q, na.strings = "NA", as.is = FALSE, dec = ".")#
-message = "      Excess"#
-default = k#
-k = winDialogString(message, default)#
-k = type.convert(k, na.strings = "NA", as.is = FALSE, dec = ".")#
-if (k < 8 && k > (n - 1)) warning("SFEhillquantile: excess should be greater than 8 and less than the number of elements.", #
-    call. = FALSE)#
-if (q < 0 && q > 1) warning("SFEhillquantile: please give a rational quantile value.", #
-    call. = FALSE)#
-rest = gpdFit(x, nextremes = k, type = "mle")				# ML-estimation of gamma #
-rest = rest@parameter#
-# the Hill-quantile value#
-(xest = x[k] + x[k] * (((n/k) * (1 - q))^(-rest$u) - 1))	# Hill-quantil estimation
-# clear all variables#
-rm(list = ls(all = TRUE))#
-graphics.off()#
-#
-# install and load packages#
-libraries = c("MASS")#
-lapply(libraries, function(x) if (!(x %in% installed.packages())) {#
-    install.packages(x)#
-})#
-lapply(libraries, library, quietly = TRUE, character.only = TRUE)#
-#
-# Drug data#
-zi = rbind(c(1, 0, 1, 0, 1, 0, 0, 0, 0, 21), c(1, 0, 1, 0, 0, 1, 0, 0, 0, 32), c(1, #
-    0, 1, 0, 0, 0, 1, 0, 0, 70), c(1, 0, 1, 0, 0, 0, 0, 1, 0, 43), c(1, 0, 1, 0, #
-    0, 0, 0, 0, 1, 19), c(1, 0, 0, 1, 1, 0, 0, 0, 0, 683), c(1, 0, 0, 1, 0, 1, 0, #
-    0, 0, 596), c(1, 0, 0, 1, 0, 0, 1, 0, 0, 705), c(1, 0, 0, 1, 0, 0, 0, 1, 0, 295), #
-    c(1, 0, 0, 1, 0, 0, 0, 0, 1, 99), c(0, 1, 1, 0, 1, 0, 0, 0, 0, 46), c(0, 1, 1, #
-        0, 0, 1, 0, 0, 0, 89), c(0, 1, 1, 0, 0, 0, 1, 0, 0, 169), c(0, 1, 1, 0, 0, #
-        0, 0, 1, 0, 98), c(0, 1, 1, 0, 0, 0, 0, 0, 1, 51), c(0, 1, 0, 1, 1, 0, 0, #
-        0, 0, 738), c(0, 1, 0, 1, 0, 1, 0, 0, 0, 700), c(0, 1, 0, 1, 0, 0, 1, 0, #
-        0, 847), c(0, 1, 0, 1, 0, 0, 0, 1, 0, 336), c(0, 1, 0, 1, 0, 0, 0, 0, 1, #
-        196))#
-y = zi[, 10]#
-#
-# Design matrix#
-I = 2  # sex M - F#
-J = 2  # drug Yes - No#
-K = 5  # age category 16-29, 30-44, 45-64, 65-74, 75++#
-#
-X = rbind(c(1, 1, 1, 0, 0, 0), c(1, 1, 0, 1, 0, 0), c(1, 1, 0, 0, 1, 0), c(1, 1, #
-    0, 0, 0, 1), c(1, 1, -1, -1, -1, -1), c(1, -1, 1, 0, 0, 0), c(1, -1, 0, 1, 0, #
-    0), c(1, -1, 0, 0, 1, 0), c(1, -1, 0, 0, 0, 1), c(1, -1, -1, -1, -1, -1), c(-1, #
-    1, 1, 0, 0, 0), c(-1, 1, 0, 1, 0, 0), c(-1, 1, 0, 0, 1, 0), c(-1, 1, 0, 0, 0, #
-    1), c(-1, 1, -1, -1, -1, -1), c(-1, -1, 1, 0, 0, 0), c(-1, -1, 0, 1, 0, 0), c(-1, #
-    -1, 0, 0, 1, 0), c(-1, -1, 0, 0, 0, 1), c(-1, -1, -1, -1, -1, -1))#
-#
-n   = dim(X)#
-n1  = n[1]#
-n2  = n[2]#
-#
-# First order interactions#
-X1  = cbind(X, X[, 1] * X[, 2], X[, 1] * X[, 3], X[, 1] * X[, 4], X[, 1] * X[, 5], #
-    X[, 1] * X[, 6], X[, 2] * X[, 3], X[, 2] * X[, 4], X[, 2] * X[, 5], X[, 2] * #
-        X[, 6])#
-#
-# Second order interactions#
-X2  = cbind(X1, X[, 1] * X[, 2] * X[, 3], X[, 1] * X[, 2] * X[, 4], X[, 1] * X[, 2] * #
-    X[, 5], X[, 1] * X[, 2] * X[, 6])#
-#
-# Constant term#
-X3  = cbind(rep(1, n1), X2)#
-#
-nn  = dim(X3)#
-nn1 = nn[1]#
-nn2 = nn[2]#
-#
-# saturated model#
-(df     = nn1 - nn2)#
-(b0     = solve(t(X3) %*% X3) %*% t(X3) %*% log(y))#
-(loglik = sum((X3 %*% b0) * y))#
-#
-# restricted model#
-nn  = dim(X1)#
-nn1 = nn[1]#
-nn2 = nn[2]#
-#
-XX  = cbind(rep(1, nn1), X1)#
-nn  = dim(XX)#
-nn1 = nn[1]#
-nn2 = nn[2]#
-(df = nn1 - nn2)#
-#
-#standard parameters produce warnings#
-#fit = glm.nb(y ~ X1)#
-#
-# This is ok#
-fit = glm.nb(y ~ X1, control=glm.control(maxit=200, epsilon = 1e-6))#
-b   = fit$coefficients#
-cbind(b)#
-(loglik = sum((XX %*% b) * y))#
-#
-lnyfit  = XX %*% b#
-yfit    = exp(lnyfit)#
-e       = log(y) - lnyfit#
-print("degree of freedom")#
-print(df)#
-#
-G2      = 2 * sum(y * e)#
-pvalG2  = 1 - pchisq(G2, df)#
-X2      = sum(((y - yfit)^2)/yfit)#
-pvalG2  = 1 - pchisq(G2, df)#
-#
-statstable = cbind(G2, pvalG2, X2, pvalG2, df)#
-print("Statistics: G2 | pvalue | chisq| pvalue | degrees of freedom")#
-print(statstable)#
-#
-print(" ")#
-print(" observed fitted")#
-print(" values   values")#
-print(cbind(y, yfit))#
-print(" ")
-library(yaml)#
-#
-# dummy example 3#
-#
-string <- "#
-Name of QuantLet : MVAdrug3waysTab#
-#
-Published in : Applied Multivariate Statistical Analysis#
-#
-Description : 'Presents the coefficient estimates based on the#
-saturated model with first and second order interactions as#
-well as the coefficient estimates for the restricted model with#
-first interactions for the drug data. It also computes G-squared#
-deviance and Chi-squared test statistics.'#
-#
-Keywords : contingency-table, chi-square, chi-square test, test, statistics, regression, hypothesis-testing#
-#
-See also : MVAdrugLogistic, MVAdrug#
-#
-Author : Awdesch Melzer#
-#
-Submitted : Fri, May 04 2012 by Dedy Dwi Prastyo #
-#
-Code warning : 'In sqrt(1/i) : NaNs produced'#
-#
-"#
-(fl = yaml.load(string))
-# clear all variables#
-rm(list = ls(all = TRUE))#
-graphics.off()#
-#
-# install and load packages#
-libraries = c("MASS")#
-lapply(libraries, function(x) if (!(x %in% installed.packages())) {#
-    install.packages(x)#
-})#
-lapply(libraries, library, quietly = TRUE, character.only = TRUE)#
-#
-# Drug data#
-zi = rbind(c(1, 0, 1, 0, 1, 0, 0, 0, 0, 21), c(1, 0, 1, 0, 0, 1, 0, 0, 0, 32), c(1, #
-    0, 1, 0, 0, 0, 1, 0, 0, 70), c(1, 0, 1, 0, 0, 0, 0, 1, 0, 43), c(1, 0, 1, 0, #
-    0, 0, 0, 0, 1, 19), c(1, 0, 0, 1, 1, 0, 0, 0, 0, 683), c(1, 0, 0, 1, 0, 1, 0, #
-    0, 0, 596), c(1, 0, 0, 1, 0, 0, 1, 0, 0, 705), c(1, 0, 0, 1, 0, 0, 0, 1, 0, 295), #
-    c(1, 0, 0, 1, 0, 0, 0, 0, 1, 99), c(0, 1, 1, 0, 1, 0, 0, 0, 0, 46), c(0, 1, 1, #
-        0, 0, 1, 0, 0, 0, 89), c(0, 1, 1, 0, 0, 0, 1, 0, 0, 169), c(0, 1, 1, 0, 0, #
-        0, 0, 1, 0, 98), c(0, 1, 1, 0, 0, 0, 0, 0, 1, 51), c(0, 1, 0, 1, 1, 0, 0, #
-        0, 0, 738), c(0, 1, 0, 1, 0, 1, 0, 0, 0, 700), c(0, 1, 0, 1, 0, 0, 1, 0, #
-        0, 847), c(0, 1, 0, 1, 0, 0, 0, 1, 0, 336), c(0, 1, 0, 1, 0, 0, 0, 0, 1, #
-        196))#
-y = zi[, 10]#
-#
-# Design matrix#
-I = 2  # sex M - F#
-J = 2  # drug Yes - No#
-K = 5  # age category 16-29, 30-44, 45-64, 65-74, 75++#
-#
-X = rbind(c(1, 1, 1, 0, 0, 0), c(1, 1, 0, 1, 0, 0), c(1, 1, 0, 0, 1, 0), c(1, 1, #
-    0, 0, 0, 1), c(1, 1, -1, -1, -1, -1), c(1, -1, 1, 0, 0, 0), c(1, -1, 0, 1, 0, #
-    0), c(1, -1, 0, 0, 1, 0), c(1, -1, 0, 0, 0, 1), c(1, -1, -1, -1, -1, -1), c(-1, #
-    1, 1, 0, 0, 0), c(-1, 1, 0, 1, 0, 0), c(-1, 1, 0, 0, 1, 0), c(-1, 1, 0, 0, 0, #
-    1), c(-1, 1, -1, -1, -1, -1), c(-1, -1, 1, 0, 0, 0), c(-1, -1, 0, 1, 0, 0), c(-1, #
-    -1, 0, 0, 1, 0), c(-1, -1, 0, 0, 0, 1), c(-1, -1, -1, -1, -1, -1))#
-#
-n   = dim(X)#
-n1  = n[1]#
-n2  = n[2]#
-#
-# First order interactions#
-X1  = cbind(X, X[, 1] * X[, 2], X[, 1] * X[, 3], X[, 1] * X[, 4], X[, 1] * X[, 5], #
-    X[, 1] * X[, 6], X[, 2] * X[, 3], X[, 2] * X[, 4], X[, 2] * X[, 5], X[, 2] * #
-        X[, 6])#
-#
-# Second order interactions#
-X2  = cbind(X1, X[, 1] * X[, 2] * X[, 3], X[, 1] * X[, 2] * X[, 4], X[, 1] * X[, 2] * #
-    X[, 5], X[, 1] * X[, 2] * X[, 6])#
-#
-# Constant term#
-X3  = cbind(rep(1, n1), X2)#
-#
-nn  = dim(X3)#
-nn1 = nn[1]#
-nn2 = nn[2]#
-#
-# saturated model#
-(df     = nn1 - nn2)#
-(b0     = solve(t(X3) %*% X3) %*% t(X3) %*% log(y))#
-(loglik = sum((X3 %*% b0) * y))#
-#
-# restricted model#
-nn  = dim(X1)#
-nn1 = nn[1]#
-nn2 = nn[2]#
-#
-XX  = cbind(rep(1, nn1), X1)#
-nn  = dim(XX)#
-nn1 = nn[1]#
-nn2 = nn[2]#
-(df = nn1 - nn2)#
-#
-#standard parameters produce warnings#
-#fit = glm.nb(y ~ X1)#
-#
-# This is ok#
-fit = glm.nb(y ~ X1, control=glm.control(maxit=200, epsilon = 1e-6))#
-b   = fit$coefficients#
-cbind(b)#
-(loglik = sum((XX %*% b) * y))#
-#
-lnyfit  = XX %*% b#
-yfit    = exp(lnyfit)#
-e       = log(y) - lnyfit#
-print("degree of freedom")#
-print(df)#
-#
-G2      = 2 * sum(y * e)#
-pvalG2  = 1 - pchisq(G2, df)#
-X2      = sum(((y - yfit)^2)/yfit)#
-pvalG2  = 1 - pchisq(G2, df)#
-#
-statstable = cbind(G2, pvalG2, X2, pvalG2, df)#
-print("Statistics: G2 | pvalue | chisq| pvalue | degrees of freedom")#
-print(statstable)#
-#
-print(" ")#
-print(" observed fitted")#
-print(" values   values")#
-print(cbind(y, yfit))#
-print(" ")
-library(yaml)#
-#
-# dummy example 3#
-#
-string <- "#
-Name of QuantLet : MVAdrug3waysTab#
-#
-Published in : Applied Multivariate Statistical Analysis#
-#
-Description : 'Presents the coefficient estimates based on the#
-saturated model with first and second order interactions as#
-well as the coefficient estimates for the restricted model with#
-first interactions for the drug data. It also computes G-squared#
-deviance and Chi-squared test statistics.'#
-#
-Keywords : contingency-table, chi-square, chi-square test, test, statistics, regression, hypothesis-testing#
-#
-See also : MVAdrugLogistic, MVAdrug#
-#
-Author : Awdesch Melzer#
-#
-Submitted : Fri, May 04 2012 by Dedy Dwi Prastyo #
-#
-Code warning : #
-- 1: In sqrt(1/i) : NaNs produced#
-- 2: In sqrt(1/i) : NaNs produced#
-"#
-(fl = yaml.load(string))
-Name of QuantLet : MVAdrug3waysTab#
-#
-Published in : Applied Multivariate Statistical Analysis#
-#
-Description : 'Presents the coefficient estimates based on the#
-saturated model with first and second order interactions as#
-well as the coefficient estimates for the restricted model with#
-first interactions for the drug data. It also computes G-squared#
-deviance and Chi-squared test statistics.'#
-#
-Keywords : contingency-table, chi-square, chi-square test, test, statistics, regression, hypothesis-testing#
-#
-See also : MVAdrugLogistic, MVAdrug#
-#
-Author : Awdesch Melzer#
-#
-Submitted : Fri, May 04 2012 by Dedy Dwi Prastyo #
-#
-Code warning : #
-- '1: In sqrt(1/i) : NaNs produced'#
-- '2: In sqrt(1/i) : NaNs produced'
-library(yaml)#
-#
-# dummy example 3#
-#
-string <- "#
-Name of QuantLet : MVAdrug3waysTab#
-#
-Published in : Applied Multivariate Statistical Analysis#
-#
-Description : 'Presents the coefficient estimates based on the#
-saturated model with first and second order interactions as#
-well as the coefficient estimates for the restricted model with#
-first interactions for the drug data. It also computes G-squared#
-deviance and Chi-squared test statistics.'#
-#
-Keywords : contingency-table, chi-square, chi-square test, test, statistics, regression, hypothesis-testing#
-#
-See also : MVAdrugLogistic, MVAdrug#
-#
-Author : Awdesch Melzer#
-#
-Submitted : Fri, May 04 2012 by Dedy Dwi Prastyo #
-#
-Code warning : #
-- '1: In sqrt(1/i) : NaNs produced'#
-- '2: In sqrt(1/i) : NaNs produced'#
-#
-"#
-(fl = yaml.load(string))
-# clear all variables#
-rm(list = ls(all = TRUE))#
-graphics.off()#
-#
-# install and load packages#
-libraries = c("MASS")#
-lapply(libraries, function(x) if (!(x %in% installed.packages())) {#
-    install.packages(x)#
-})#
-lapply(libraries, library, quietly = TRUE, character.only = TRUE)#
-#
-# Drug data#
-zi = rbind(c(1, 0, 1, 0, 1, 0, 0, 0, 0, 21), c(1, 0, 1, 0, 0, 1, 0, 0, 0, 32), c(1, #
-    0, 1, 0, 0, 0, 1, 0, 0, 70), c(1, 0, 1, 0, 0, 0, 0, 1, 0, 43), c(1, 0, 1, 0, #
-    0, 0, 0, 0, 1, 19), c(1, 0, 0, 1, 1, 0, 0, 0, 0, 683), c(1, 0, 0, 1, 0, 1, 0, #
-    0, 0, 596), c(1, 0, 0, 1, 0, 0, 1, 0, 0, 705), c(1, 0, 0, 1, 0, 0, 0, 1, 0, 295), #
-    c(1, 0, 0, 1, 0, 0, 0, 0, 1, 99), c(0, 1, 1, 0, 1, 0, 0, 0, 0, 46), c(0, 1, 1, #
-        0, 0, 1, 0, 0, 0, 89), c(0, 1, 1, 0, 0, 0, 1, 0, 0, 169), c(0, 1, 1, 0, 0, #
-        0, 0, 1, 0, 98), c(0, 1, 1, 0, 0, 0, 0, 0, 1, 51), c(0, 1, 0, 1, 1, 0, 0, #
-        0, 0, 738), c(0, 1, 0, 1, 0, 1, 0, 0, 0, 700), c(0, 1, 0, 1, 0, 0, 1, 0, #
-        0, 847), c(0, 1, 0, 1, 0, 0, 0, 1, 0, 336), c(0, 1, 0, 1, 0, 0, 0, 0, 1, #
-        196))#
-y = zi[, 10]#
-#
-# Design matrix#
-I = 2  # sex M - F#
-J = 2  # drug Yes - No#
-K = 5  # age category 16-29, 30-44, 45-64, 65-74, 75++#
-#
-X = rbind(c(1, 1, 1, 0, 0, 0), c(1, 1, 0, 1, 0, 0), c(1, 1, 0, 0, 1, 0), c(1, 1, #
-    0, 0, 0, 1), c(1, 1, -1, -1, -1, -1), c(1, -1, 1, 0, 0, 0), c(1, -1, 0, 1, 0, #
-    0), c(1, -1, 0, 0, 1, 0), c(1, -1, 0, 0, 0, 1), c(1, -1, -1, -1, -1, -1), c(-1, #
-    1, 1, 0, 0, 0), c(-1, 1, 0, 1, 0, 0), c(-1, 1, 0, 0, 1, 0), c(-1, 1, 0, 0, 0, #
-    1), c(-1, 1, -1, -1, -1, -1), c(-1, -1, 1, 0, 0, 0), c(-1, -1, 0, 1, 0, 0), c(-1, #
-    -1, 0, 0, 1, 0), c(-1, -1, 0, 0, 0, 1), c(-1, -1, -1, -1, -1, -1))#
-#
-n   = dim(X)#
-n1  = n[1]#
-n2  = n[2]#
-#
-# First order interactions#
-X1  = cbind(X, X[, 1] * X[, 2], X[, 1] * X[, 3], X[, 1] * X[, 4], X[, 1] * X[, 5], #
-    X[, 1] * X[, 6], X[, 2] * X[, 3], X[, 2] * X[, 4], X[, 2] * X[, 5], X[, 2] * #
-        X[, 6])#
-#
-# Second order interactions#
-X2  = cbind(X1, X[, 1] * X[, 2] * X[, 3], X[, 1] * X[, 2] * X[, 4], X[, 1] * X[, 2] * #
-    X[, 5], X[, 1] * X[, 2] * X[, 6])#
-#
-# Constant term#
-X3  = cbind(rep(1, n1), X2)#
-#
-nn  = dim(X3)#
-nn1 = nn[1]#
-nn2 = nn[2]#
-#
-# saturated model#
-(df     = nn1 - nn2)#
-(b0     = solve(t(X3) %*% X3) %*% t(X3) %*% log(y))#
-(loglik = sum((X3 %*% b0) * y))#
-#
-# restricted model#
-nn  = dim(X1)#
-nn1 = nn[1]#
-nn2 = nn[2]#
-#
-XX  = cbind(rep(1, nn1), X1)#
-nn  = dim(XX)#
-nn1 = nn[1]#
-nn2 = nn[2]#
-(df = nn1 - nn2)#
-#
-#standard parameters produce warnings#
-#fit = glm.nb(y ~ X1)#
-#
-# This is ok#
-fit = glm.nb(y ~ X1, control=glm.control(maxit=200, epsilon = 1e-6))#
-b   = fit$coefficients#
-cbind(b)#
-(loglik = sum((XX %*% b) * y))#
-#
-lnyfit  = XX %*% b#
-yfit    = exp(lnyfit)#
-e       = log(y) - lnyfit#
-print("degree of freedom")#
-print(df)#
-#
-G2      = 2 * sum(y * e)#
-pvalG2  = 1 - pchisq(G2, df)#
-X2      = sum(((y - yfit)^2)/yfit)#
-pvalG2  = 1 - pchisq(G2, df)#
-#
-statstable = cbind(G2, pvalG2, X2, pvalG2, df)#
-print("Statistics: G2 | pvalue | chisq| pvalue | degrees of freedom")#
-print(statstable)#
-#
-print(" ")#
-print(" observed fitted")#
-print(" values   values")#
-print(cbind(y, yfit))#
-print(" ")
-# clear all variables#
-rm(list = ls(all = TRUE))#
-graphics.off()#
-#
-# read data and set variables#
-data  = read.table("bankrupt.txt")#
-length(data)#
-y     = data[, 6]#
-x1    = data[, 1]#
-x2    = data[, 2]#
-x3    = data[, 3]#
-x4    = data[, 4]#
-x5    = data[, 5]#
-#
-# compute logit model#
-fit   = glm(y ~ x3 + x4 + x5, family = binomial(link = "logit"))#
-summary(fit)
