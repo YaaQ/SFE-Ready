@@ -1,6 +1,10 @@
+
 Name of QuantLet : SFEBinomp
+
 Published in: Statistics of Financial Markets
+
 Description: 'Generates and plots 3 paths of a binomial process with p = 0.6. (2sigma)-intervals around the trend are given as well.'
+
 Keywords:
 - binomial
 - discrete
@@ -14,12 +18,16 @@ Keywords:
 - stochastic
 - stochastic-process
 - time-series
+
 See also:
 - SFEbinomv
 - SFEbinomv_log
+
 Author: Alexander Ristig
+
 Submitted: Sat, July 25 2015 by quantomas
+
 Input:
-- n - number of observations
-- k - number of trajectories
-- p - probability of up movement
+- n : number of observations
+- k : number of trajectories
+- p : probability of up movement
