@@ -27,7 +27,7 @@ Submitted : Thu, October 11 2012 by Dedy Dwi Prastyo
 Datafiles : FSE_LSE_2014.dat
 
 Output: 
-- TRUE: matrix of tail index estimations
+- Y : matrix of tail index estimations
 
 ```
 
