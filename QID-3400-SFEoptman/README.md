@@ -33,6 +33,8 @@ d=0.02.'
 
 ```
 
+![Picture1](SFEoptman-1.png)
+
 
 ```r
 # clear variables and close windows
