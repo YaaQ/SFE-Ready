@@ -25,6 +25,8 @@ n=10000 elements.'
 
 ```
 
+![Picture1](SFEBMuller-1.png)
+
 
 ```r
 # clear variables and close windows
