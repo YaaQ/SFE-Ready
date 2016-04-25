@@ -27,6 +27,8 @@ Example : Time to maturity structure of implied DAX volatilities at the money.
 
 ```
 
+![Picture1](SFEVolaTermStructure-1.png)
+
 
 ```r
 
