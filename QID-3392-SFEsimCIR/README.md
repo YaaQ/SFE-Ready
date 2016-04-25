@@ -21,7 +21,7 @@ Author : Awdesch Melzer
 Submitted : Fri, July 17 2015 by quantomas
 
 Input: 
-- FALSE: Number of Observations
+- n: Number of Observations
 - beta: Parameter
 - gamma: Parameter
 - m: Mean
