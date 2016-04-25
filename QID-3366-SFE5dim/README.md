@@ -25,6 +25,8 @@ Datafiles : dataset.txt
 
 ```
 
+![Picture1](SFE5dim-1.png)
+
 
 ```r
 # clear variables and close windows
