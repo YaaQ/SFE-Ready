@@ -22,6 +22,8 @@ Datafiles : dafox.dat
 
 ```
 
+![Picture1](SFEtimedax-1.png)
+
 
 ```r
 # clear variables and close windows
