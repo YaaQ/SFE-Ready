@@ -25,6 +25,8 @@ Datafiles : cap.txt
 
 ```
 
+![Picture1](SFEcapvplot-1.png)
+
 
 ```r
 # clear variables and close windows
