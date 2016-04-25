@@ -25,6 +25,8 @@ Example : Plot of daily DAX logreturns data from 2005 to 2010 with density plot
 
 ```
 
+![Picture1](SFEDAXlogreturns-1.png)
+
 
 ```r
 

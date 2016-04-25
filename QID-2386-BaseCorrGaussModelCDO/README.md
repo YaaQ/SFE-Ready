@@ -34,7 +34,7 @@ Input:
 - LowerTloss: Lower expecter tranche losses from lowerTrLossGauss routine
 
 Output: 
-- TRUE: Base tranche correlation
+- y: Base tranche correlation
 
 Example : y = BaseCorrGaussModelCDO(a, R, defProb, UAP, LAP, DF, DayCount, trueSpread, LowerTLoss)
 
