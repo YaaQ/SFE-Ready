@@ -21,7 +21,7 @@ Author : Joanna Tomanek, Lasse Groth
 Submitted : Wed, July 22 2015 by quantomas
 
 Input: 
-- FALSE: number of simulations
+- n: number of simulations
 - alpha: true parameter for ARCH(1) process
 
 Example : An example is produced for n=100 and alpha=0.5.
