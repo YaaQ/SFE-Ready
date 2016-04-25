@@ -27,7 +27,7 @@ Submitted : Thu, July 16 2015 by quantomas
 Datafiles : FSE_LSE.dat
 
 Output: 
-- TRUE: matrix of descriptive statistics
+- y: matrix of descriptive statistics
 
 ```
 
