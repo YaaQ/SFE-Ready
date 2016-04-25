@@ -30,6 +30,8 @@ Krugerrand gold as financial indicators.'
 
 ```
 
+![Picture1](SFEnnarch-1.png)
+
 
 ```r
 # clear variables and close windows
