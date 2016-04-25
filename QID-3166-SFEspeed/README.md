@@ -24,6 +24,8 @@ time to maturity tau like [0.05, 1], then the plot of the speed of a call option
 
 ```
 
+![Picture1](SFEspeed-1.png)
+
 
 ```r
 
