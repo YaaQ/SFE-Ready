@@ -22,7 +22,7 @@ Author : Alexander Ristig
 Submitted : Sat, July 25 2015 by quantomas
 
 Input: 
-- FALSE: number of observations
+- n: number of observations
 - k: number of trajectories
 - p: probability of up movement
 
