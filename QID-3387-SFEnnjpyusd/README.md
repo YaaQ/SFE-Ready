@@ -29,6 +29,8 @@ network (blue): training set(above) and forecasts(below).'
 
 ```
 
+![Picture1](SFEnnjpyusd-1.png)
+
 
 ```r
 # clear variables and close windows
