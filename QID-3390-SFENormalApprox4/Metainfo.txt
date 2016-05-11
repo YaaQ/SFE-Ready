@@ -2,14 +2,14 @@ Name of QuantLet : SFENormalApprox4
 
 Published in: Statistics of Financial Markets
 
-Description: Computes numerical approximation to a normal cumulative distribution function (cdf) using method d).
+Description: 'Computes numerical approximation to a normal cumulative distribution function (cdf) using method d).'
 
-Keywords: approximation, cdf, distribution, graphical representation, normal, normal-distribution, numeric, plot
+Keywords: 'approximation, cdf, distribution, graphical representation, normal, normal-distribution, numeric, plot'
 
-See also: SFENormalApprox1, SFENormalApprox1, SFENormalApprox2, SFENormalApprox3, SFENormalApprox3
+See also: 'SFENormalApprox1, SFENormalApprox1, SFENormalApprox2, SFENormalApprox3, SFENormalApprox3'
 
 Author: Wolfgang K. Haerdle
-Author[Matlab]: Wolfgang Haerdle 20000120
+Author[Matlab]: Wolfgang Haerdle
 
 Submitted: Fri, July 17 2015 by quantomas
 Submitted[Matlab]: Wed, April 27 by Ya Qian
